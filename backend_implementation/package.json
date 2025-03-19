@@ -4,8 +4,8 @@
   "description": "Backend for a story customization platform similar to WonderWraps",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
+    "start": "cd src && node app.js",  // Ensures the app is started from the 'src' directory
+    "dev": "cd src && nodemon app.js", // Ensures nodemon runs from the 'src' directory
     "test": "jest"
   },
   "dependencies": {

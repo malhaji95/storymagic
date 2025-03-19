@@ -1,13 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 // Log the current directory for debugging
 console.log('Current Directory:', __dirname);
 
 // Import models from the correct path
-const models = require('./src/models'); // Ensure models are being imported from the correct relative path
-const { sequelize } = require('./src/models'); // Import sequelize if it's part of your models file
+const models = require(path.resolve(__dirname, 'models')); // Absolute path from 'src'
+const { sequelize } = require(path.resolve(__dirname, 'models')); // Absolute path from 'src'
 const userRoutes = require('./src/routes/userRoutes');
 const storyRoutes = require('./src/routes/storyRoutes');
 const customizationRoutes = require('./src/routes/customizationRoutes');
