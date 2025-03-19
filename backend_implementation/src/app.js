@@ -1,12 +1,16 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const models = require('./models');
+
+// Import models from the correct path
+const models = require('./src/models'); // Ensure models are being imported from the correct relative path
+const { sequelize } = require('./src/models'); // Import sequelize if it's part of your models file
 const userRoutes = require('./src/routes/userRoutes');
 const storyRoutes = require('./src/routes/storyRoutes');
 const customizationRoutes = require('./src/routes/customizationRoutes');
 const orderRoutes = require('./src/routes/orderRoutes');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -28,7 +32,7 @@ app.use(errorMiddleware);
 // Database connection and server start
 const startServer = async () => {
   try {
-    await sequelize.authenticate();
+    await sequelize.authenticate(); // Ensure sequelize is correctly connected
     console.log('Database connection established successfully.');
     
     // Sync database models (in development)
