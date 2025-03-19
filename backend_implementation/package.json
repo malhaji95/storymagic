@@ -7,10 +7,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "build": "echo 'Build completed'",
-    "test": "jest --runInBand",
-    "db:init": "node scripts/initDb.js",
-    "db:migrate": "node scripts/migrate.js",
-    "db:seed": "node scripts/seed.js"
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
