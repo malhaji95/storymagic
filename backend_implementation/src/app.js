@@ -1,13 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { sequelize } = require('./models');
-const userRoutes = require('./routes/userRoutes');
-const storyRoutes = require('./routes/storyRoutes');
-const customizationRoutes = require('./routes/customizationRoutes');
-const orderRoutes = require('./routes/orderRoutes');
-const errorMiddleware = require('./middleware/errorMiddleware');
-
+const { sequelize } = require('./src/models');
+const userRoutes = require('./src/routes/userRoutes');
+const storyRoutes = require('./src/routes/storyRoutes');
+const customizationRoutes = require('./src/routes/customizationRoutes');
+const orderRoutes = require('./src/routes/orderRoutes');
+const errorMiddleware = require('./src/middleware/errorMiddleware');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -15,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static('src/public'));
 
 // Routes
 app.use('/api/users', userRoutes);
