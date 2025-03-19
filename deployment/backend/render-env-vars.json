@@ -1,0 +1,32 @@
+{
+  "name": "PORT",
+  "value": "5000"
+},
+{
+  "name": "NODE_ENV",
+  "value": "production"
+},
+{
+  "name": "DB_HOST",
+  "value": "dpg-clusterid.oregon-postgres.render.com"
+},
+{
+  "name": "DB_NAME",
+  "value": "storymagic_db"
+},
+{
+  "name": "DB_USER",
+  "value": "storymagic_user"
+},
+{
+  "name": "DB_PASSWORD",
+  "value": "your_secure_password_here"
+},
+{
+  "name": "JWT_SECRET",
+  "value": "your_jwt_secret_here"
+},
+{
+  "name": "CORS_ORIGIN",
+  "value": "https://storymagic-platform.vercel.app"
+}

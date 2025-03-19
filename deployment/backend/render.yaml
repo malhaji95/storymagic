@@ -1,0 +1,44 @@
+# Render.com Web Service Configuration
+
+type: web
+name: storymagic-api
+env: node
+region: oregon
+plan: free
+
+buildCommand: npm install && npm run build
+startCommand: npm start
+
+envVars:
+  - key: PORT
+    value: 5000
+  - key: NODE_ENV
+    value: production
+  - key: DB_HOST
+    sync: false
+  - key: DB_NAME
+    sync: false
+  - key: DB_USER
+    sync: false
+  - key: DB_PASSWORD
+    sync: false
+  - key: JWT_SECRET
+    sync: false
+  - key: CORS_ORIGIN
+    value: https://storymagic-platform.vercel.app
+
+services:
+  - type: web
+    name: storymagic-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - fromGroup: storymagic-env-vars
+
+databases:
+  - name: storymagic-db
+    plan: free
+    region: oregon
